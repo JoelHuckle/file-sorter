@@ -16,7 +16,8 @@ fs.readdir("/Users/joelhuckle/Downloads", "", (err, data) => {
   if (err) throw err;
   data.forEach((file) => {
     const ext = path.extname(file);
-    if (ext) {
+
+    if (ext && file !== "cleanup.sh") {
       const oldPath = path.join("/Users/joelhuckle/Downloads", file);
       const newPath = path.join(
         "/Users/joelhuckle/Downloads",
